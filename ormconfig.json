@@ -1,0 +1,9 @@
+{
+  "type": "postgres",
+  "url": "postgres://user:password@localhost:5432/nestdb",
+  "entities": ["dist/**/*.entity.js"],
+  "migrations": ["dist/migrations/*.js"],
+  "cli": {
+    "migrationsDir": "src/migrations"
+  }
+}

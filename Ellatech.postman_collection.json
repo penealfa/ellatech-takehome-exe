@@ -1,0 +1,1117 @@
+{
+	"info": {
+		"_postman_id": "be130f97-b67a-46fc-89eb-06c770cb8d79",
+		"name": "Ellatech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30005541"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": []
+		},
+		{
+			"name": "Auth",
+			"item": []
+		},
+		{
+			"name": "User",
+			"item": []
+		},
+		{
+			"name": "Order/Transation",
+			"item": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/auth/login",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK 200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/auth/login",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "247"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f7-R+2HntsspOrK1w3Qf7r97CdWOkY\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Aug 2025 09:19:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwic3ViIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE3NTYxMTM1NTcsImV4cCI6MTc1NjExNzE1N30.2orh6gb_DX-5f7l5R2FlmE5RZlPPmy34FYGRlVNYyjY\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Permissions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/permissions",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"permissions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Ok 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/permissions",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"permissions"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "367"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"16f-X/r6tVsOx924wXdy0gHyN+VQV1Q\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Aug 2025 10:16:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"user.create\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"user.assign_role\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"product.create\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"product.adjust\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"product.status\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"order.create\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"transaction.view\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"order.update\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"role.create\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"permission.view\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "create user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"peneal\",\r\n    \"password\": \"peneal\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/users",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK 200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"peneal\",\r\n    \"password\": \"peneal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/users",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "180"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b4-eAbmQ0XNCul/wDcRsZ0/lbrxnl8\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Aug 2025 10:18:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"User created\",\n    \"data\": {\n        \"id\": 2,\n        \"username\": \"peneal\",\n        \"password\": \"$2b$10$peLxqdPxbuDPn.TNL71xIeou5.Tca0vJKMSEvP0BDCG.IVHMV7X3q\",\n        \"roles\": [\n            {\n                \"id\": 2,\n                \"name\": \"user\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "create roles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"basic\",\r\n    \"permIds\": [\r\n        1,2,3,4\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/roles",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"roles"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK 200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"basic\",\r\n    \"roleIds\": [\r\n        1,2,3,4\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/roles",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "215"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d7-0VAZZanGo6lAJ+S+H63HmG2LhlI\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Aug 2025 10:34:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"Role created\",\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"basic\",\n        \"permissions\": [\n            {\n                \"id\": 1,\n                \"name\": \"user.create\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"user.assign_role\"\n            },\n            {\n                \"id\": 3,\n                \"name\": \"product.create\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"product.adjust\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Adjust Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"adjustment\": 20\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/products/adjust/:id",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"products",
+						"adjust",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK 200",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"adjustment\": 20\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/products/adjust/:id",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"products",
+								"adjust",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "88"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"58-kjtbFQlt0OaPPbyTBH0KHqZ8lEg\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Aug 2025 10:37:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"Quantity adjusted\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Laptop\",\n        \"quantity\": 30\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Product Status",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseurl}}/products/status/:id",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"products",
+						"status",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/products/status/:id",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"products",
+								"status",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-Czn+OpPp8Idov25UTUopF2STUAs\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Aug 2025 10:38:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"status\": \"in-stock\",\n        \"quantity\": 30\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Assign User Role",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"roleIds\": [3]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/users/:userId/roles",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"users",
+						":userId",
+						"roles"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK 200",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"roleIds\": [3]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/users/:userId/roles",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"roles"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "183"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b7-YoyUSoNA+Mn7H/3iv+lmcyxiTa0\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Aug 2025 10:40:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"Roles assigned\",\n    \"data\": {\n        \"id\": 2,\n        \"username\": \"peneal\",\n        \"password\": \"$2b$10$peLxqdPxbuDPn.TNL71xIeou5.Tca0vJKMSEvP0BDCG.IVHMV7X3q\",\n        \"roles\": [\n            {\n                \"id\": 3,\n                \"name\": \"basic\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productId\": 1,\r\n  \"quantity\": 2\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/orders",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK 200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": 1,\r\n  \"quantity\": 2\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/orders",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "283"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"11b-gn8RdAzDo6LiQ/NxDf50LjIvv5g\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Aug 2025 10:43:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"Order created\",\n    \"data\": {\n        \"id\": 1,\n        \"user\": {\n            \"id\": 1,\n            \"username\": \"admin\",\n            \"password\": \"$2b$10$Jt1o7COy5vp.S5Ul3SWgQe.tvvjdrXhayrFzbfdDT2bH73MMYp7D2\"\n        },\n        \"product\": {\n            \"id\": 1,\n            \"name\": \"Laptop\",\n            \"quantity\": 30\n        },\n        \"quantity\": 2,\n        \"status\": \"ordered\",\n        \"createdAt\": \"2025-08-25T10:43:32.485Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Transaction",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseurl}}/orders/transactions",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"orders",
+						"transactions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/orders/transactions",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"orders",
+								"transactions"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "279"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"117-0crrPu3TrfIojRlUWaRQYiTiTKw\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Aug 2025 10:44:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user\": {\n                \"id\": 1,\n                \"username\": \"admin\",\n                \"password\": \"$2b$10$Jt1o7COy5vp.S5Ul3SWgQe.tvvjdrXhayrFzbfdDT2bH73MMYp7D2\"\n            },\n            \"product\": {\n                \"id\": 1,\n                \"name\": \"Laptop\",\n                \"quantity\": 28\n            },\n            \"quantity\": 2,\n            \"status\": \"ordered\",\n            \"createdAt\": \"2025-08-25T10:43:32.485Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Order Status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/orders/:id/status",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"orders",
+						":id",
+						"status"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/orders/:id/status",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"orders",
+								":id",
+								"status"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "49"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"31-BxU0MqKxsjlfVIw56jCZLhBM6yk\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Aug 2025 10:56:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": \"shipped\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Order Status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"status\": \"shipped\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/orders/:id/status",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"orders",
+						":id",
+						"status"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK 200",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"shipped\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/orders/:id/status",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"orders",
+								":id",
+								"status"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "126"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7e-kfL2oSXQFIv3PF7LJR6htNrFNII\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Aug 2025 10:47:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"Status updated\",\n    \"data\": {\n        \"id\": 1,\n        \"quantity\": 2,\n        \"status\": \"shipped\",\n        \"createdAt\": \"2025-08-25T10:43:32.485Z\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
