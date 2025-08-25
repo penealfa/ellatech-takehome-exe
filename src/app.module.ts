@@ -1,4 +1,3 @@
-// Update src/app.module.ts
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
@@ -34,4 +33,5 @@ import { SeederModule } from './seeder/seeder.module';
   controllers: [AppController],
   providers: [AppService],
 })
+
 export class AppModule {}
